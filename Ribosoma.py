@@ -25,17 +25,16 @@ class Ribosoma:
     def makeProtein(self, arn):
         arnData = arn.getData()
         proteina = []
-        aminoacidos = []
         for i in range(0, len(adn), 3):
             codon = adn[i:i+3]
             if codon in codon_amino_dict:
                 aminoacido = codon_amino_dict[codon]
                 if aminoacido == "Stop":
                     break  # Terminamos la traducción si encontramos un codón de terminación
-                aminoacidos.append(aminoacido)
+                proteina.append(aminoacido)
             else:
-                aminoacidos.append("Desconocido")
-        return aminoacidos
+                proteina.append("Desconocido")
+        return proteina
         
     
     
