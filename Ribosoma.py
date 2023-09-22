@@ -2,7 +2,7 @@ from ARN import ARN
 
 class Ribosoma:
 
-    self.codon_amino_dict = {
+    codon_amino_dict = {
     "AUG": "Met", "UUU": "Phe", "UUC": "Phe", "UUA": "Leu", "UUG": "Leu",
     "UCU": "Ser", "UCC": "Ser", "UCA": "Ser", "UCG": "Ser",
     "UAU": "Tyr", "UAC": "Tyr", "UAA": "Stop", "UAG": "Stop",
@@ -25,16 +25,14 @@ class Ribosoma:
     def makeProtein(self, arn):
         arnData = arn.getData()
         proteina = []
-        for i in range(0, len(adn), 3):
-            codon = adn[i:i+3]
-            if codon in codon_amino_dict:
-                aminoacido = codon_amino_dict[codon]
+        for i in range(0, len(arnData), 3):
+            codon = arnData[i:i + 3]
+            if codon in Ribosoma.codon_amino_dict:
+                aminoacido = Ribosoma.codon_amino_dict[codon]
                 if aminoacido == "Stop":
-                    break  # Terminamos la traducción si encontramos un codón de terminación
+                    break
                 proteina.append(aminoacido)
             else:
                 proteina.append("Desconocido")
         return proteina
-        
-    
     

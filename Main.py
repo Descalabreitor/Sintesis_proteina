@@ -1,17 +1,21 @@
 from DNA_Generator import DNA_Generator
-
-def dna_to_rnam(dna):
-    return dna.replace("T", "U")
-
-
+from ADN import ADN
+from ARN import ARN
+from Ribosoma import Ribosoma
 
 def main():
     dna_generator = DNA_Generator()
     data = dna_generator.gen_data(10)
-    rnam_list = [dna_to_rnam(dna) for dna in data]
+    adn_list = [ADN(data=dna) for dna in data]
 
-
-    
+    for adn in adn_list:
+        arn = ARN(adn)
+        ribosoma = Ribosoma()
+        proteina = ribosoma.makeProtein(arn)
+        print("ADN:", adn.data)
+        print("ARNm:", arn.getData())
+        print("Proteína:", proteina)
+        print()
 
 if __name__ == "__main__":
     main()
