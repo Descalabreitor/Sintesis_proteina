@@ -1,3 +1,6 @@
+
+
+
 # Protein Synthesis Simulator in Python
 
 This repository contains a protein synthesis simulator in Python. The program generates DNA data, transcribes it to RNA, and translates it to proteins using a basic ribosome model.
@@ -58,5 +61,9 @@ If you'd like to contribute to the development of this protein synthesis simulat
 1. Fork the repository.
 2. Make your changes and improvements.
 3. Create a pull request describing the changes made.
+
+Authors:
+- Adrián Perera Moreno
+- Alvaro Juan Travieso García
 
 Thank you for contributing!
